@@ -65,14 +65,11 @@ $(document).ready(function(){
 	     domain.val() + variant.val() + identity.val()));
   });
 
-//  account.click(select_element);
-//  password.click(select_element);
+  account.click(select_element);
+  password.click(select_element);
 
-//  account.mouseup(function(e){ e.preventDefault(); });
-//  password.mouseup(function(e){ e.preventDefault(); });
-
-  account.click(function(e){ $(this).select(); });
-  password.click(function(e){ $(this).select(); });
+  account.mouseup(function(e){ e.preventDefault(); });
+  password.mouseup(function(e){ e.preventDefault(); });
 
   // Localization
   var lang = navigator.language.split("-")[0];

@@ -16,6 +16,8 @@ function select_element()
     range.selectNodeContents(this);
     sel.removeAllRanges();
     sel.addRange(range);
+    this.selectionStart=0;
+    this.selectionEnd=this.value.length;
   } else {
     if (document.body.createTextRange) {
       range = document.body.createTextRange();

@@ -16,12 +16,21 @@ function select_element()
     range.selectNodeContents(this);
     sel.removeAllRanges();
     sel.addRange(range);
-  } else
+  } else {
     if (document.body.createTextRange) {
       range = document.body.createTextRange();
       range.moveToElementText(this);
       range.select();
+    } else {
+      alert ("Do not know how to select.");
     }
+  }
+}
+
+function _select_element()
+{
+  this.selectionStart=0;
+  this.selectionEnd=this.value.length;
 }
 
 $(document).ready(function(){

@@ -21,7 +21,7 @@ th, td {
 input {
     width: 100%;
     border: 0;
-    background-color: yellow;
+    background-color: lightgray;
 }
 #parameters td {
     width: 3em;

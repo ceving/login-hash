@@ -8,7 +8,7 @@ function decode_utf8(s)
   return b;
 }
 
-function select_element()
+function click_element()
 {
   if (window.getSelection && document.createRange) {
     sel = window.getSelection();
@@ -16,8 +16,6 @@ function select_element()
     range.selectNodeContents(this);
     sel.removeAllRanges();
     sel.addRange(range);
-    this.selectionStart=0;
-    this.selectionEnd=this.value.length;
   } else {
     if (document.body.createTextRange) {
       range = document.body.createTextRange();
@@ -29,10 +27,25 @@ function select_element()
   }
 }
 
-function _select_element()
+
+function tap_element()
 {
-  this.selectionStart=0;
-  this.selectionEnd=this.value.length;
+  this.
+  if (window.getSelection && document.createRange) {
+    sel = window.getSelection();
+    range = document.createRange();
+    range.selectNodeContents(this);
+    sel.removeAllRanges();
+    sel.addRange(range);
+  } else {
+    if (document.body.createTextRange) {
+      range = document.body.createTextRange();
+      range.moveToElementText(this);
+      range.select();
+    } else {
+      alert ("Do not know how to select.");
+    }
+  }
 }
 
 $(document).ready(function(){
@@ -76,6 +89,9 @@ $(document).ready(function(){
   account.click(select_element);
   password.click(select_element);
 
+  account.mouseup(function(e){ e.preventDefault(); });
+  password.mouseup(function(e){ e.preventDefault(); });
+  
   // Localization
   var lang = navigator.language.split("-")[0];
   var l15n = $('span.l15n > span:lang('+lang+')');

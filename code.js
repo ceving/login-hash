@@ -37,7 +37,7 @@ $(document).ready(function(){
   var account_hash;
   var password_hash;
 
-  var account_alphabet = "abcdefghijkmnopqrstuvwxyz";
+  var account_alphabet = "abcdefghijklmnopqrstuvwxyz";
   var password_alphabet =
       "0123456789" + 
       "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
@@ -65,11 +65,9 @@ $(document).ready(function(){
 	     domain.val() + variant.val() + identity.val()));
   });
 
-  account.click(select_element);
-  password.click(select_element);
-
-  account.mouseup(function(e){ e.preventDefault(); });
-  password.mouseup(function(e){ e.preventDefault(); });
+  // Does not work on Apple WebJunk.
+  //account.click(select_element);
+  //password.click(select_element);
 
   // Localization
   var lang = navigator.language.split("-")[0];

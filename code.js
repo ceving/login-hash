@@ -92,4 +92,6 @@ $(document).ready(function(){
     $('span.l15n > span').css('display', 'none');
     l15n.css('display', 'initial');
   }
+
+  domain.focus();
 });

@@ -27,6 +27,17 @@ function select_element()
   }
 }
 
+function number_or_default (default_value, element)
+{
+  return function() {
+    var number = parseInt(element[0].textContent);
+    console.debug ("number: %d", number);
+    var result = (number == number) ? number : default_value;
+    console.debug ("result: %d", result);
+    return result;
+  };
+}
+
 $(document).ready(function(){
   var domain   = $('#domain');
   var variant  = $('#variant');
@@ -36,7 +47,12 @@ $(document).ready(function(){
   var password = $('#password');
   var account_hash;
   var password_hash;
+  var account_length = number_or_default(8, $('#account_length'));
+  var password_length = number_or_default(20, $('#password_length'));
 
+  console.debug("account_length: %d", account_length());
+  console.debug("password_length: %d", password_length());
+  
   var account_alphabet = "abcdefghijklmnopqrstuvwxyz";
   var password_alphabet =
       "0123456789" + 
@@ -55,8 +71,8 @@ $(document).ready(function(){
 
   $('input').on('input change paste', function () {
 
-    account_hash = new BLAKE2s(8, decode_utf8(identity.val()));
-    password_hash = new BLAKE2s(16, decode_utf8(secret.val()));
+    account_hash = new BLAKE2s(account_length(), decode_utf8(identity.val()));
+    password_hash = new BLAKE2s(password_length(), decode_utf8(secret.val()));
 
     update(account, account_hash, account_alphabet,
 	   decode_utf8(domain.val()));

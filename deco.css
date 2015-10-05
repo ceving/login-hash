@@ -10,3 +10,16 @@ span.l15n > span:lang(en) {
 th {
     text-align: left;
 }
+td {
+    font-family: monospace;
+}
+input {
+    width: 100%;
+}
+#parameters td {
+    width: 3em;
+}
+h1, h2 {
+    font-family: sans-serif;
+    margin: 1em 0 1ex 0;
+}

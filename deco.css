@@ -13,6 +13,9 @@ th {
 td {
     font-family: monospace;
 }
+th, td {
+    vertical-align: baseline;
+}
 input {
     width: 100%;
 }

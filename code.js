@@ -8,29 +8,8 @@ function decode_utf8(s)
   return b;
 }
 
-function click_element()
+function select_element()
 {
-  if (window.getSelection && document.createRange) {
-    sel = window.getSelection();
-    range = document.createRange();
-    range.selectNodeContents(this);
-    sel.removeAllRanges();
-    sel.addRange(range);
-  } else {
-    if (document.body.createTextRange) {
-      range = document.body.createTextRange();
-      range.moveToElementText(this);
-      range.select();
-    } else {
-      alert ("Do not know how to select.");
-    }
-  }
-}
-
-
-function tap_element()
-{
-  this.
   if (window.getSelection && document.createRange) {
     sel = window.getSelection();
     range = document.createRange();

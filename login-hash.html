@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
+    <title>Login Hash</title>
+    <script src="blake2s-1.0.3.min.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
+    <script src="login-hash.js"></script>
+    <link href="login-hash.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>Login Hash</h1>
+    <form>
+      <table>
+	<tbody>
+	  <tr>
+	    <th>
+	      <span class="l15n">
+		<span lang="en">Domain</span>
+		<span lang="de">Domäne</span>
+	      </span>:
+	    </th>
+	    <td><input id="domain" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></td>
+	  </tr>
+	  <tr>
+	    <th>
+	      <span class="l15n">
+		<span lang="en">Identity</span>
+		<span lang="de">Identität</span>
+	      </span>:
+	    </th>
+	    <td><input id="identity" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></td>
+	  </tr>
+	  <tr>
+	    <th>
+	      <span class="l15n">
+		<span lang="en">Secret</span>
+		<span lang="de">Geheimnis</span>
+	      </span>:
+	    </th>
+	    <td><input id="secret" type="password"></td>
+	  </tr>
+	  <tr>
+	    <th>
+	      <span class="l15n">
+		<span lang="en">Variant</span>
+		<span lang="de">Variante</span>
+	      </span>:
+	    </th>
+	    <td><input id="variant" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ></td>
+	  </tr>
+	  <tr>
+	    <th>
+	      <span class="l15n">
+		<span lang="en">Account</span>
+		<span lang="de">Konto</span>
+	      </span>:
+	    </th>
+	    <td id="account"></td>
+	  </tr>
+	  <tr>
+	    <th>
+	      <span class="l15n">
+		<span lang="en">Password</span>
+		<span lang="de">Passwort</span>
+	      </span>:
+	    </th>
+	    <td id="password"></td>
+	  </tr>
+	</tbody>
+      </table>
+    </form>
+  </body>
+</html>

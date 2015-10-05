@@ -1,0 +1,12 @@
+span.l15n {
+    display: inline-flex;
+}
+span.l15n > span {
+    display: none;
+}
+span.l15n > span:lang(en) {
+    display: initial;
+}
+th {
+    text-align: left;
+}
